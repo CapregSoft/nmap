@@ -96,7 +96,7 @@ func (s *Scanner) Run() (result *Run, warnings []string, err error) {
 
 	// Prepare nmap process
 	cmd := exec.Command(s.binaryPath, args...)
-	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
+	// cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 	if s.modifySysProcAttr != nil {
 		s.modifySysProcAttr(cmd.SysProcAttr)
 	}
